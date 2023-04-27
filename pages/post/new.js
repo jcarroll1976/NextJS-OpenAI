@@ -13,6 +13,7 @@ export default function NewPost(props) {
   NewPost.getLayout = function getLayout(page,pageProps) {
     return <Layout {...pageProps}>{page}</Layout>
   }
+  
   export const getServerSideProps = withPageAuthRequired(() => {
     return {
       props: {},
