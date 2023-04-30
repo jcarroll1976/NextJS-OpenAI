@@ -6,8 +6,9 @@ import Link from 'next/link'
 import React from 'react'
 import Logo from '../Logo/Logo';
 
-export default function Layout({children}) {
+export default function Layout({children,...rest}) {
     const {user} = useUser();
+    console.log("APP PROPS: ", rest)
   return (
     <div className='grid grid-cols-[300px_1fr] h-screen max-h-screen'>
         <div className='flex flex-col text-white overflow-hidden'>
@@ -41,9 +42,8 @@ export default function Layout({children}) {
          </div>
         </div>
         
-        <div>
-            {children}
-        </div>
+      {children}
+        
     </div>
   )
 }
